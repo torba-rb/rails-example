@@ -1,1 +1,68 @@
 # Torbafile is evaluated as Ruby code. You can use comments and metaprogramming!
+
+# The following content is located inside of https://github.com/iamceege/tooltipster release archive:
+# ./bower.json
+# ./css
+# ./css/themes
+# ./css/themes/tooltipster-light.css
+# ./css/themes/tooltipster-noir.css
+# ./css/themes/tooltipster-punk.css
+# ./css/themes/tooltipster-shadow.css
+# ./css/tooltipster.css
+# ./demo
+# ./demo/index.html
+# ./demo/map.png
+# ./demo/reset.css
+# ./demo/style.css
+# ./doc
+# ./doc/css
+# ./doc/css/prettify.css
+# ./doc/css/reset.css
+# ./doc/css/style.css
+# ./doc/images
+# ./doc/images/browser-chrome.png
+# ./doc/images/browser-firefox.png
+# ./doc/images/browser-ie.png
+# ./doc/images/browser-opera.png
+# ./doc/images/browser-safari.png
+# ./doc/images/favicon.png
+# ./doc/images/icons
+# ./doc/images/icons/icomoon.eot
+# ./doc/images/icons/icomoon.svg
+# ./doc/images/icons/icomoon.ttf
+# ./doc/images/icons/icomoon.woff
+# ./doc/images/icons/icomoond41d.eot
+# ./doc/images/large-background.jpg
+# ./doc/images/pattern-navy.png
+# ./doc/images/social.jpg
+# ./doc/images/spiderman.png
+# ./doc/images/tooltipster.svg
+# ./doc/js
+# ./doc/js/jquery.jgfeed.js
+# ./doc/js/lang-css.js
+# ./doc/js/prettify.js
+# ./doc/js/scripts.js
+# ./index.html
+# ./js
+# ./js/jquery.tooltipster.js
+# ./js/jquery.tooltipster.min.js
+# ./README.md
+# ./tooltipster.jquery.json
+#
+# We definitely don't need all this files, we want only JS and some CSS, that's why we use `import` option:
+
+gh_release source: "iamceege/tooltipster", tag: "3.2.6", import: %w[
+  js/jquery.tooltipster.js
+  css/tooltipster.css
+  css/themes/tooltipster-light.css
+]
+
+# Here's the result of packaging (by running `bin/torba pack`) located in "~/.torba/tooltipster-edaec908":
+# ./tooltipster
+# ./tooltipster/jquery.tooltipster.js
+# ./tooltipster/tooltipster-light.css
+# ./tooltipster/tooltipster.css
+#
+# Notice how all files are located under "tooltipster" directory, which is the same name as package's.
+# Also notice that js/, css/, css/themes/ directories have gone after importing the files. All files are
+# in the "root" directory now.

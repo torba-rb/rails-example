@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require tooltipster/jquery.tooltipster
 //= require_tree .
